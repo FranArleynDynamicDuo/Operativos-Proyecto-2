@@ -1,0 +1,12 @@
+Para Compilar:
+
+	1) Abra el terminal
+	2) Escriba make, el resto de la compilacion se hara automaticamente
+
+Para Correr: 
+
+	3) Escribir en la consola ./Micuento -d Directorio numCar numArch archivo
+		-d Directorio	: Directorio donde se buscaran las carpetas (opcional)
+		numCar  	: Numero de carpetas de las cuales se van a leer los archivos
+		numArch 	: Numero de archivos que se leeran
+		archivo 	: Archivo donde se guardara la salida
