@@ -1,0 +1,101 @@
+man
+
+	Muestra elmanual de algun comando de shell
+	man <comando>	
+	
+ls
+
+	Muestra archivos de directorio
+
+cd
+
+	Cambiar directorio
+	cd <directorio nuevo>
+
+cat
+more
+less
+wc
+
+ssh 
+	
+	Conecta a copmputadora remota
+	ssh <usuario>@<ipmaquina>
+	
+scp 
+
+	Envia archivos a computadora remota
+	<archivo> <usuario>@<ipmaquina> <Path destino>
+
+cp origen adonde	
+
+pwd
+
+	Muestra el directorio igual
+	
+mv
+
+	Cortar
+	
+rm
+
+	Borra (¡CUIDADO!)
+	
+mkdir
+
+	Crea carpeta nueva
+	
+touch
+
+	actualiza la fecha de acceso de un archivo
+
+nano
+
+	editores basicos
+
+vi
+
+	editores basicos
+	
+find
+
+	buscador de archivo, a partir del directorio actual
+
+locate
+
+	buscador de archivo
+
+ping
+
+	prueba una conexion
+	ping 8.8.8.8
+	
+#
+
+	
+?
+
+
+<
+
+	Rediricciona
+
+>
+
+	Rediricciona
+	./Holamundo >> log.txt (loque salgaal correr holamundo ponlo en log.txt
+
+|
+
+	Recibe
+
+||
+
+&&
+
+	Comando equivalente a AND
+	ls && cd, para que se cumpla cd deben cumplirse todos los anteriores
+
+*	
+
+

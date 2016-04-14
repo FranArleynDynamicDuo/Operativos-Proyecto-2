@@ -1,0 +1,184 @@
+/*
+ * Menu Preguntas.c
+ *
+ *  Created on: Apr 17, 2015
+ *      Author: Arleyn
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct nodo
+{
+	int id_num[3];
+	int nivel[1];
+	char categoria[1];
+	char preg[100];
+	char resp1[100];
+	char resp2[100];
+	char resp3[100];
+	char resp_C[1];
+	struct nodo* siguiente;
+};
+
+struct nodo *primero, *ultimo; 
+
+void imprimir_menu(void)
+ {
+ 	printf("\n------------------------------------\n");
+ 	printf("Bienvenido a su base de datos\n");
+ 	printf("Que desea hacer?\n");
+ 	printf("1. Leer la base de datos\n");
+ 	printf("2. Consultar Preguntas\n");
+ 	printf("3. Consultar Preguntas de un nivel en especifico\n");
+ 	printf("4. Eliminar una pregunta\n");
+ 	printf("5. Insertar una pregunta\n");
+ 	printf("6. Salvar una base de datos\n");
+ 	printf("7. Salir\n");
+ 	printf("\n? ");
+ }
+
+void Leer_BaseDeDatos()
+{
+
+}
+
+void Consultar_Preguntas()
+{
+	struct nodo *aux;
+	int i;
+
+	i = 0;
+	aux = primero;
+	printf("\nMostrando la Lista de Pregunta:\n");
+	while (aux != NULL)
+	{
+		printf("Codigo: %s, Categoria: %s\n, Nivel: %s\n, Pregunta: %s\n, Resp 1: %s\n, Resp 2: %s\n, Resp 3: %s\n, Resp Correcta: %s\n",
+                    aux->id_num,aux->categoria,aux->nivel,aux->preg,aux->resp1,aux->resp2,aux->resp3,aux->resp_C);
+		aux = aux->siguiente;
+		i++;
+	}
+	if (i==0) printf( "\nLa lista está vacía!!\n" );
+}
+
+void Consultar_PreguntasNivel()
+{
+	
+}
+
+void Eliminar_Pregunta()
+{
+	
+}
+
+void Insertar_Pregunta()
+{
+	struct nodo *nuevo;
+	nuevo = (struct nodo *)malloc(sizeof(struct nodo));
+	
+	if (nuevo == NULL)
+	{
+		printf("No hay memoria disponible\n");
+	}
+	
+	printf("Nuevo elemento\n");
+	printf("Codigo de la pregunta: "); fflush(stdout);
+	gets(nuevo->id_num);
+
+	printf("Categoria: "); fflush(stdout);
+	gets(nuevo->categoria);
+
+	printf("nivel: "); fflush(stdout);
+	gets(nuevo->nivel);
+
+	printf("Pregunta: "); fflush(stdout);
+	gets(nuevo->preg);
+
+	printf("Opcion de Respuesta 1: "); fflush(stdout);
+	gets(nuevo->resp1);
+
+	printf("Opcion de Respuesta 2: "); fflush(stdout);
+	gets(nuevo->resp2);
+
+	printf("Opcion de Respuesta 3: "); fflush(stdout);
+	gets(nuevo->resp3);
+
+	printf("Respuesta Correcta: "); fflush(stdout);
+	gets(nuevo->resp_C);
+
+	// El campo siguiente es null por ser el ultimo
+	nuevo -> siguiente = NULL;
+
+	// Ahora metemos el nuevo elemento en la lista
+	// Comprobamos si la lista es vacia
+
+	if (primero == NULL)
+	{
+		primero = nuevo;
+		ultimo = nuevo;
+	}
+	else
+	{
+		ultimo -> siguiente = nuevo;
+		ultimo = nuevo;
+	}
+}
+
+void Salvar_BaseDeDatos()
+{
+	
+}
+
+
+int main()
+{
+	int salir = 0;
+	int opcion;
+	primero = (struct nodo *) NULL;
+    ultimo = (struct nodo *) NULL;
+	
+	while (salir == 0)
+		{
+
+			opcion = -1;
+			imprimir_menu();
+			fflush(stdin);
+			scanf("%d", &opcion);
+
+			if (opcion == 1)
+			{
+				Leer_BaseDeDatos();
+			}
+
+			else if (opcion == 2)
+			{
+				Consultar_Preguntas();
+			}
+
+			else if (opcion == 3)
+			{
+				Consultar_PreguntasNivel();
+			}
+
+			else if (opcion == 4)
+			{
+				Eliminar_Pregunta();
+			}
+
+			else if (opcion == 5)
+			{
+				Insertar_Pregunta();
+			}
+
+			else if (opcion == 6)
+			{
+				Salvar_BaseDeDatos();
+			}
+
+			if (opcion == 7)
+			{
+				salir = 1;
+			}
+
+		}
+}
